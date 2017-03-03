@@ -66,6 +66,45 @@ int main()
         cout<<"\nPromedio de Notas: "<<estudiante[i].promedio;
         cout<<"\n***********************************************\n";
     }
+
+       int promedios[c_almn];
+       int x,y;
+    for(int i=0;i<c_almn;i++)
+    {   promedios[i]=estudiante[i].promedio; }
+
+    if(promedios[0]>promedios[1] && promedios[0]>promedios[2])
+      { if(promedios[1]>promedios[2])
+        {   x=0;y=1;    }
+            else{   x=0;y=2;    }
+      }else
+        {   if(promedios[1]>promedios[0] && promedios[1]>promedios[2])
+            { if(promedios[0]>promedios[2])
+                {   x=1;y=2;   }
+                    else{   x=1;y=0;    }
+            }else
+                {  if(promedios[2]>promedios[1] && promedios[2]>promedios[0])
+                    {   if(promedios[0]>promedios[1])
+                        {   x=2;y=1;}
+                            else{   x=2;y=0;}
+                    }
+                }
+        }
+
+        cout<<"\n\t\MAYOR PROMEDIO\n";
+        cout<<"\n***********************************************\n";
+        cout<<"\nNombre: "<<estudiante[x].nombre;
+        cout<<"\nSexo: "<<estudiante[x].sexo;
+        cout<<"\nEdad: "<<estudiante[x].edad;
+        cout<<"\nPromedio de Notas: "<<estudiante[x].promedio;
+        cout<<"\n***********************************************\n";
+
+        cout<<"\n\t\tMENOR PROMEDIO\n";
+        cout<<"\n***********************************************\n";
+        cout<<"\nNombre: "<<estudiante[y].nombre;
+        cout<<"\nSexo: "<<estudiante[y].sexo;
+        cout<<"\nEdad: "<<estudiante[y].edad;
+        cout<<"\nPromedio de Notas: "<<estudiante[y].promedio;
+        cout<<"\n***********************************************\n";
     return 0;
     system("pause");
 }
