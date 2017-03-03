@@ -10,10 +10,11 @@ struct trabajador
     char nombre[30];
     int edad;
     int salario;
-};trabajador nomina[ct];
+};
 
 int main()
 {
+    trabajador nomina[ct];
     int x,y,dato;
     int n[ct];
     while (dato !=0)
