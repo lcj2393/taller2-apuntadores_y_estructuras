@@ -33,5 +33,4 @@ for (int i=0;i<t_arreglo;i++){
             printf("%d Es PAR y con pocision de memoria %p\n",*(p+i),(p+i));*(p+i);
         }
     }
-
 }
