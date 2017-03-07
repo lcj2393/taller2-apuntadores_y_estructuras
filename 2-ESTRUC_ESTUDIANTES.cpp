@@ -10,10 +10,8 @@ struct alumno
     char nombre[30];
     int edad;
     int grado;
-    int promedio;
+    float promedio;
 };alumno estudiante[almn];
-
-//float fmayor(float);
 
 int main()
 {
@@ -39,7 +37,6 @@ int main()
 
     for(int i=0;i<almn;i++)
     {   n[i]=estudiante[i].promedio; }
-    //mayor=(fmayor(n[almn]));
     if(n[0]>n[1] && n[0]>n[2])
       { x=0;}else
                 {   if(n[1]>n[0] && n[1]>n[2])
@@ -49,7 +46,6 @@ int main()
                         }
                 }
         }
-
     cout<<"\n\n\t\tMEJOR PROMEDIO\n\n";
     cout<<"\nLos datos del estudiande con mayor promedio son: \n";
     cout<<"\nNombre: "<<estudiante[x].nombre;

@@ -67,16 +67,14 @@ int main()
    cout<<"\n***********************************************\n";
    cout<<"\t\tPERSONAS CON DISCAPACIDAD\n";
    cout<<"***********************************************\n";
-   for(int i=0;i<cpdisc;i++)
-   {
+   for(int i=0;i<cpdisc;i++){
        cout<<"\nNombre: "<<pdisc[i];
    }
 
    cout<<"\n***********************************************\n";
    cout<<"\t\tPERSONAS SIN DISCAPACIDAD\n";
    cout<<"***********************************************\n";
-   for(int i=0;i<cpsdisc;i++)
-   {
+   for(int i=0;i<cpsdisc;i++){
        cout<<"\nNombre: "<<psdisc[i];
    }
     return 0;

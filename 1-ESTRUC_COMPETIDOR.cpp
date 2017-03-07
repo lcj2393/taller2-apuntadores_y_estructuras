@@ -41,18 +41,13 @@ int main()
     cout<<"Sexo: "<<concursante.sexo<<"\n";
     cout<<"Club: "<<concursante.club<<"\n";
 
-    if(concursante.edad <=15)
-    {
+    if(concursante.edad <=15){
         cout<<"Categoria de Competicion: Infantil\n";
     }else
-        {
-            if (concursante.edad >15 && concursante.edad <=30)
-            {
-                cout<<"Categoria de Competicion: Joven\n";
-            }else
-                {
-                    if (concursante.edad >30)
-                    {
+        {   if (concursante.edad >15 && concursante.edad <=30)
+            {   cout<<"Categoria de Competicion: Joven\n";
+                }else
+                    {   if (concursante.edad >30){
                         cout<<"Categoria de Competicion: Adulto\n";
                     }
                 }
