@@ -15,7 +15,7 @@ struct trabajador
 
 int main()
 {
-    int x,y,dato;
+    int mayor,menor,x,y,dato;
     int nt=0;//NUMERO DE TRABAJADORES
     while (dato !=0)
     {
@@ -36,38 +36,30 @@ int main()
         if(dato==1)
         {   nt++;    }else{  dato==0;    }
     }
-    int n[nt];
-    for(int i=0;i<nt;i++)
-    {   n[i]=nomina[i].salario; }
 
-    if(n[0]>n[1] && n[0]>n[2])
-      { if(n[1]>n[2])
-        {   x=0;y=1;    }
-            else{   x=0;y=2;    }
-      }else
-        {   if(n[1]>n[0] && n[1]>n[2])
-            { if(n[0]>n[2])
-                {   x=1;y=2;   }
-                    else{   x=1;y=0;    }
-            }else
-                {  if(n[2]>n[1] && n[2]>n[0])
-                    {   if(n[0]>n[1])
-                        {   x=2;y=1;}
-                            else{   x=2;y=0;}
-                    }
-                }
+    mayor=nomina[0].salario;
+    menor=nomina[0].salario;
+
+    for (int i=0; i<nt; i++){
+        if (nomina[i].salario> mayor){
+            mayor=nomina[i].salario;x=i;
+        }else{
+            if (nomina[i].salario<menor){
+                menor=nomina[i].salario;y=i;
+            }
         }
+    }
 
     cout<<"\n\n\t\tSALARIOS MAYOR Y MENOR\n\n";
     cout<<"\nLos datos del trabajador con Mayor salario es: \n";
-    cout<<"\nNombre: "<<nomina[y].nombre;
-    cout<<"\nEdad: "<<nomina[y].edad;
-    cout<<"\nSalario: "<<nomina[y].salario;
-
-    cout<<"\nLos datos del trabajador con Menor salario es: \n";
     cout<<"\nNombre: "<<nomina[x].nombre;
     cout<<"\nEdad: "<<nomina[x].edad;
     cout<<"\nSalario: "<<nomina[x].salario;
+
+    cout<<"\nLos datos del trabajador con Menor salario es: \n";
+    cout<<"\nNombre: "<<nomina[y].nombre;
+    cout<<"\nEdad: "<<nomina[y].edad;
+    cout<<"\nSalario: "<<nomina[y].salario;
     return 0;
     system("pause");
 }

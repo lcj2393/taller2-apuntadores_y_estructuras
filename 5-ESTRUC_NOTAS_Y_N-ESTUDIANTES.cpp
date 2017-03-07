@@ -23,6 +23,7 @@ struct calificaciones
 int main()
 {
     int n;
+    int x,y,mayor,menor;
     int c_almn=0;
     while(n!=0)
     {
@@ -67,30 +68,20 @@ int main()
         cout<<"\n***********************************************\n";
     }
 
-       int promedios[c_almn];
-       int x,y;
-    for(int i=0;i<c_almn;i++)
-    {   promedios[i]=estudiante[i].promedio; }
+    mayor=estudiante[0].promedio;
+    menor=estudiante[0].promedio;
 
-    if(promedios[0]>promedios[1] && promedios[0]>promedios[2])
-      { if(promedios[1]>promedios[2])
-        {   x=0;y=1;    }
-            else{   x=0;y=2;    }
-      }else
-        {   if(promedios[1]>promedios[0] && promedios[1]>promedios[2])
-            { if(promedios[0]>promedios[2])
-                {   x=1;y=2;   }
-                    else{   x=1;y=0;    }
-            }else
-                {  if(promedios[2]>promedios[1] && promedios[2]>promedios[0])
-                    {   if(promedios[0]>promedios[1])
-                        {   x=2;y=1;}
-                            else{   x=2;y=0;}
-                    }
-                }
+    for (int i=0; i<c_almn; i++){
+        if (estudiante[i].promedio> mayor){
+            mayor=estudiante[i].promedio;x=i;
+        }else{
+            if (estudiante[i].promedio<menor){
+                menor=estudiante[i].promedio;y=i;
+            }
         }
+    }
 
-        cout<<"\n\t\MAYOR PROMEDIO\n";
+        cout<<"\n\tMAYOR PROMEDIO\n";
         cout<<"\n***********************************************\n";
         cout<<"\nNombre: "<<estudiante[x].nombre;
         cout<<"\nSexo: "<<estudiante[x].sexo;
