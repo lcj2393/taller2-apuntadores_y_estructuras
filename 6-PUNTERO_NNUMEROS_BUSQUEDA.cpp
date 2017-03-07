@@ -5,6 +5,7 @@
 using namespace std;
 
 void llenar_arreglo(int *,int);
+void imprimir_arreglo(int *, int);
 void men_a_may(int *, int);
 
 using namespace std;
