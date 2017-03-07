@@ -31,13 +31,21 @@ void llenar_arreglo(int *p,int nnum){
 }
 
 void busqueda(int *p, int nnum){
-    int dato;
+    int nbusq;
+    int n=0;
+    do{
     printf("\nDigite Valor a Colsultar: ");
-    cin>>dato;
+    cin>>nbusq;
 
     for(int i=0;i<nnum;i++){
-        if(*(p+i)==dato){
-            printf("\nEl Valor buscado %d esta en la pocision %p\n",*(p+i),(p+i));
+        if(*(p+i)==nbusq){
+            printf("\nEl Valor buscado %d esta en la pocision %p\n",*(p+i),(p+i));n++;
         }
     }
+    if(n==0){
+        printf("\nValor ingresado no valido\n");
+    }else{
+        n=1;
+        }
+    }while(n!=1);
 }
