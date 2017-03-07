@@ -5,8 +5,7 @@
 using namespace std;
 
 void llenar_arreglo(int *,int);
-void imprimir_arreglo(int *, int);
-void men_a_may(int *, int);
+void busqueda(int *, int);
 
 using namespace std;
 int main()
@@ -18,7 +17,7 @@ int main()
     int arreglo[nnum],*parreglo=arreglo;
 
     llenar_arreglo(parreglo,nnum);
-    men_a_may(parreglo,nnum);
+    busqueda(parreglo,nnum);
     return 0;
 }
 
@@ -31,18 +30,14 @@ void llenar_arreglo(int *p,int nnum){
     }
 }
 
-void men_a_may(int *p, int nnum){
-    int aux;
+void busqueda(int *p, int nnum){
+    int dato;
+    printf("\nDigite Valor a Colsultar: ");
+    cin>>dato;
+
     for(int i=0;i<nnum;i++){
-        for(int j=i+1;j<nnum;j++){
-            if(*(p+j)<(*(p+i))){
-                aux=*(p+j);
-                *(p+j)=*(p+i);
-                *(p+i)=*(p+j);
-                *(p+i)=aux;
-            }
+        if(*(p+i)==dato){
+            printf("\nEl Valor buscado %d esta en la pocision %p\n",*(p+i),(p+i));
         }
-    }for (int i=0;i<nnum;i++){
-        printf("\nValor (%i): %d\n",i+1,*(p+i));
     }
 }
