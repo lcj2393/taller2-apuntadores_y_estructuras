@@ -6,7 +6,7 @@ using namespace std;
 
 void llenar_arreglo(int *,int);
 void imprimir_arreglo(int *, int);
-void v_menor(int *, int);
+void men_a_may(int *, int);
 
 using namespace std;
 int main()
@@ -18,8 +18,7 @@ int main()
     int arreglo[nnum],*parreglo=arreglo;
 
     llenar_arreglo(parreglo,nnum);
-    imprimir_arreglo(parreglo,nnum);
-    v_menor(parreglo,nnum);
+    men_a_may(parreglo,nnum);
     return 0;
 }
 
@@ -32,27 +31,18 @@ void llenar_arreglo(int *p,int nnum){
     }
 }
 
-void imprimir_arreglo(int *p, int nnum){
-
-printf("\nLos valores del Vector y la Direccion de cada uno es: \n");
-    int aux=0,*direccion;
-    for (int i=0;i<nnum;i++)
-    {
-        printf("\nValor (%i): %d en Pocision %p\n",i+1,*(p+i),(p+i));
-        if(*(p+i)>aux){
-            aux=*(p+i);
-            direccion=(p+i);
+void men_a_may(int *p, int nnum){
+    int aux;
+    for(int i=0;i<nnum;i++){
+        for(int j=i+1;j<nnum;j++){
+            if(*(p+j)<(*(p+i))){
+                aux=*(p+j);
+                *(p+j)=*(p+i);
+                *(p+i)=*(p+j);
+                *(p+i)=aux;
+            }
         }
+    }for (int i=0;i<nnum;i++){
+        printf("\nValor (%i): %d\n",i+1,*(p+i));
     }
-}
-
-void v_menor (int *p,int nnum){
-    int menor=*(p+0),*dir;
-
-    for (int i=0; i<nnum; i++){
-        if (*(p+i)< menor){
-        menor=*(p+i);dir=(p+i);
-        }
-    }
-    printf("\nEl Valor menor es %d y esta en la pocision %p.",menor,dir);
 }
