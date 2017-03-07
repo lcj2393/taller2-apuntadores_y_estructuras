@@ -35,7 +35,7 @@ void c_vocales(char *p){
 
     l_nombre=strlen(p);
 
-    for(int i=0;i<(l_nombre+1);i++){
+    for(int i=0;i<(l_nombre);i++){
 
         c_v[0]=*(p+1);
 
