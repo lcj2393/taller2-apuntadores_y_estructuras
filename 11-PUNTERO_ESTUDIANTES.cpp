@@ -1,3 +1,5 @@
+//EJERCICIO TERMINADO, FUNCIONA CORRECTAMENTE
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -15,11 +17,9 @@ struct alumno
 int main()
 {
     int x,mayor;
-    float n[almn];
 
     cout<<"\t\tREGISTRO ESTUDIANTES\n\n";
-    for(int i=0;i<almn;i++)
-    {
+    for(int i=0;i<almn;i++){
         cout<<"\n***************************\n";
         cout<<"\nDigite Nombre: ";
             cin>>(*(pestudiante+i)).nombre;
@@ -31,7 +31,6 @@ int main()
         cout<<"\nDigite Promedio de Notas: ";
             cin>>(*(pestudiante+i)).promedio;
     }
-
     mayor=(*(pestudiante+0)).promedio;
 
     for (int i=0; i<almn; i++){
@@ -47,6 +46,7 @@ int main()
     cout<<"\nGrado: "<<(*(pestudiante+x)).grado;
     cout<<"\nPromedio: "<<(*(pestudiante+x)).promedio;
 
-    return 0;
+    cout<<"\n\n";
     system("pause");
+    return 0;
 }

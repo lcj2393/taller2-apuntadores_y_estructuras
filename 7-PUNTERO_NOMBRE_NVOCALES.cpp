@@ -1,3 +1,5 @@
+//CORREGIR ERROR EN EL RECORRIDO DEL NOMBRE PARA MOSTRAR LA CANTIDAD DE VOCALES
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -16,6 +18,8 @@ int main()
 
     pedir_nombre(pnombre);
     c_vocales(pnombre);
+	printf("\n\n");
+	system("pause");
     return 0;
 }
 

@@ -1,3 +1,5 @@
+//EJERCICIO TERMINADO, FUNCIONA CORRECTAMENTE
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -62,6 +64,4 @@ void imprimir_datos(){
 			printf(" %d ",*(*(p_matriz+f)+c));
 		}printf("\n");
 	}
-
 }
-

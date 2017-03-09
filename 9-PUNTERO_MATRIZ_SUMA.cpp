@@ -1,3 +1,5 @@
+//EJERCICIO TERMINADO, FUNCIONA CORRECTAMENTE
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -84,6 +86,26 @@ void suma_matriz(){
 }
 
 void imprimir_datos(){
+
+    printf("\n**********************************************\n");
+    printf("\t\t\nMATRIZ 1\n");
+	printf("\nLa Matriz 1 ingresada fue: \n\n");
+
+	for(int f = 0; f < nFilas; f += 1){
+		for(int c = 0; c < nColumnas; c++){
+			printf(" %d ",*(*(p_matriz1+c)+f));
+		}printf("\n");
+	}
+
+    printf("\n**********************************************\n");
+    printf("\t\t\nMATRIZ 2\n");
+	printf("\nLa Matriz 2 ingresada fue: \n\n");
+
+	for(int f = 0; f < nFilas; f += 1){
+		for(int c = 0; c < nColumnas; c++){
+			printf(" %d ",*(*(p_matriz2+c)+f));
+		}printf("\n");
+	}
 
     printf("\n**********************************************\n");
     printf("\t\t\nMOSTRAR RESULTADO DE MATRIZ SUMA\n");
