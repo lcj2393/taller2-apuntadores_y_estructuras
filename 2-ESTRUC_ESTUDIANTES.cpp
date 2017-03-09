@@ -48,6 +48,6 @@ int main()
     cout<<"\nGrado: "<<estudiante[x].grado;
     cout<<"\nPromedio: "<<estudiante[x].promedio;
 
-    return 0;
     system("pause");
+    return 0;
 }

@@ -44,14 +44,14 @@ int main()
     if(concursante.edad <=15){
         cout<<"Categoria de Competicion: Infantil\n";
     }else
-        {   if (concursante.edad >15 && concursante.edad <=30)
-            {   cout<<"Categoria de Competicion: Joven\n";
+        {   if (concursante.edad >15 && concursante.edad <=30){
+               cout<<"Categoria de Competicion: Joven\n";
                 }else
                     {   if (concursante.edad >30){
                         cout<<"Categoria de Competicion: Adulto\n";
-                    }
                 }
+            }
         }
-
+    system("pause");
     return 0;
 }
