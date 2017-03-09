@@ -1,3 +1,5 @@
+//EJERCICIO TERMINADO, FUNCIONA CORRECTAMENTE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -18,13 +20,14 @@ int main()
 
     llenar_arreglo(parreglo,nnum);
     busqueda(parreglo,nnum);
+    printf("\n\n");
+    system("pause");
     return 0;
 }
 
 void llenar_arreglo(int *p,int nnum){
 
-    for(int i=0;i<nnum;i++)
-    {
+    for(int i=0;i<nnum;i++){
         printf("Ingrese valor %d: ",i+1);
         scanf("%d",&(*(p+i)));
     }
@@ -43,7 +46,7 @@ void busqueda(int *p, int nnum){
         }
     }
     if(n==0){
-        printf("\nValor ingresado no valido\n");
+        printf("\nEl valor ingresado no esta en el Vector\n");
     }else{
         n=1;
         }

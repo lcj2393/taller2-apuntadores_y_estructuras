@@ -1,3 +1,5 @@
+//EJERCICIO CON PROBMLEMAS EN CICLO PARA ELEGIR MAYOR Y MENOR SALARIO
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>

@@ -1,3 +1,5 @@
+//EJERCICIO TERMINADO, FUNCIONA CORRECTAMENTE
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -20,6 +22,8 @@ int main()
     llenar_arreglo(parreglo,nnum);
     imprimir_arreglo(parreglo,nnum);
     v_menor(parreglo,nnum);
+    printf("\n\n");
+    system("pause");
     return 0;
 }
 

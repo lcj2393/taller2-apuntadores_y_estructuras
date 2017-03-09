@@ -1,3 +1,5 @@
+//EJERCICIO TERMINADO, FUNCIONA CORRECTAMENTE
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -47,7 +49,7 @@ int main()
     cout<<"\nEdad: "<<estudiante[x].edad;
     cout<<"\nGrado: "<<estudiante[x].grado;
     cout<<"\nPromedio: "<<estudiante[x].promedio;
-
+    cout<<"\n\n";
     system("pause");
     return 0;
 }

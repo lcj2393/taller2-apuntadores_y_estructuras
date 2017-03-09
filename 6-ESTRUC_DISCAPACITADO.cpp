@@ -1,3 +1,5 @@
+//FALTA TERMINAR DE VALIDAR PORQUE NO IMPRIME LOS NOMBRES INGRESADOS
+
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -21,18 +23,15 @@ int main()
     system("cls");
     cout<<"\n\t\tREGISTRO PERSONAS\n";
     cout<<"\n***********************************************\n";
-    for(int i=0;i<npersona;i++)
-    {
-    cout<<"\nDigite Nombre: ";
+    for(int i=0;i<npersona;i++){
+        cout<<"\nDigite Nombre: ";
         cin.getline(persona[i].nombre,30);
         cin.ignore(256,'\n');
-    do
-    {
+    do{
         cout<<"\nEs Discapacitado(Si<S> o No<N>: ";
             cin>>tipo;
 
-            switch(tipo)
-            {
+            switch(tipo){
             case 'S':
                 persona[i].dis=true;
                 n=1;cpdisc++;
@@ -44,25 +43,20 @@ int main()
             default:cout<<"\nValor ingresado no valido.";
             n=0;
             }
-    }while(n!=1);
-        cout<<"\n***********************************************\n";
+        }while(n!=1);
+            cout<<"\n***********************************************\n";
     }
     char pdisc[cpdisc][30];
     char psdisc[cpsdisc][30];
 
-    for(int i=0;i<npersona;i++)
-    {
-        if(persona[i].dis== true)
-        {
+    for(int i=0;i<npersona;i++){
+        if(persona[i].dis== true){
             strcpy(pdisc[i],"");
             strcat(pdisc[i],persona[i].nombre);
-
         }else
-            {
-                strcpy(psdisc[i],"");
+            {   strcpy(psdisc[i],"");
                 strcat(psdisc[i],persona[i].nombre);
-
-            }
+        }
     }
    cout<<"\n***********************************************\n";
    cout<<"\t\tPERSONAS CON DISCAPACIDAD\n";
@@ -70,13 +64,12 @@ int main()
    for(int i=0;i<cpdisc;i++){
        cout<<"\nNombre: "<<pdisc[i];
    }
-
    cout<<"\n***********************************************\n";
    cout<<"\t\tPERSONAS SIN DISCAPACIDAD\n";
    cout<<"***********************************************\n";
    for(int i=0;i<cpsdisc;i++){
        cout<<"\nNombre: "<<psdisc[i];
    }
-    return 0;
     system("pause");
+    return 0;
 }
