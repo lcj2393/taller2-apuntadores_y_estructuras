@@ -1,4 +1,4 @@
-//EJERCICIO CON PROBMLEMAS EN CICLO PARA ELEGIR MAYOR Y MENOR SALARIO
+//EJERCICIO TERMINADO, FUNCIONA CORRECTAMENTE
 
 #include <iostream>
 #include <stdlib.h>
@@ -21,7 +21,8 @@ int main()
     int nt=0;//NUMERO DE TRABAJADORES
     while (dato !=0)
     {
-        cout<<"\t\tREGISTRO TRABAJADORES\n\n";
+        cout<<"\n------------------------------------------------------------\n";
+        cout<<"\n\t\tREGISTRO TRABAJADOR ("<<nt+1<<")\n\n";
         cout<<"\n***************************\n";
         cout<<"\nDigite Nombre del Trabajador: ";
             cin.getline(nomina[nt].nombre,30,'\n');
@@ -29,26 +30,32 @@ int main()
 
         cout<<"\nDigite Edad: ";
             cin>>nomina[nt].edad;
+            cin.ignore(256,'\n');
 
         cout<<"\nDigite Salario: ";
             cin>>nomina[nt].salario;
+            cin.ignore(256,'\n');
 
-        cout<<"\nDesea seguir Registrando Trabajadores? 1-(SI) o 0-(NO)";
+        cout<<"\n------------------------------------------------------------\n";
+        cout<<"\nDesea seguir Registrando Trabajadores? 1-(SI) o 0-(NO): ";
             cin>>dato;
+            cin.ignore(256,'\n');
         if(dato==1)
-        {   nt++;    }else{  dato==0;    }
+        {   nt++;    }else{  nt++;dato==0;    }
     }
 
     mayor=nomina[0].salario;
     menor=nomina[0].salario;
 
     for (int i=0; i<nt; i++){
-        if (nomina[i].salario> mayor){
-            mayor=nomina[i].salario;x=i;
-        }else{
-            if (nomina[i].salario<menor){
-                menor=nomina[i].salario;y=i;
-            }
+        if (nomina[i].salario > mayor){
+            x=i;
+        }
+    }
+
+    for (int i=0; i<nt; i++){
+        if (nomina[i].salario < menor){
+            y=i;
         }
     }
 
@@ -62,6 +69,8 @@ int main()
     cout<<"\nNombre: "<<nomina[y].nombre;
     cout<<"\nEdad: "<<nomina[y].edad;
     cout<<"\nSalario: "<<nomina[y].salario;
-    return 0;
+
+    cout<<"\n\n";
     system("pause");
+    return 0;
 }

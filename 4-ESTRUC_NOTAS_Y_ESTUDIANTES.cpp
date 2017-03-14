@@ -7,20 +7,19 @@
 
 using namespace std;
 
-struct alumno
-{
-    char nombre[30];
-    char sexo;
-    int edad;
-    float promedio;
-};alumno estudiante[almn];
-
-struct calificaciones
-{
+struct calificaciones{
     float nota1;
     float nota2;
     float nota3;
-};calificaciones notas[almn];
+    float promedio;
+};
+
+struct alumno{
+    char nombre[30];
+    char sexo;
+    int edad;
+    calificaciones notas[almn];
+};alumno estudiante[almn];
 
 int main()
 {
@@ -38,17 +37,21 @@ int main()
 
     cout<<"\nDigite Edad: ";
         cin>>estudiante[i].edad;
+        cin.ignore(256,'\n');
 
     cout<<"\n\t\tREGISTRO DE NOTAS\n\n";
     cout<<"\nNota 1: ";
-        cin>>notas[i].nota1;
+        cin>>estudiante[i].notas[i].nota1;
+        cin.ignore(256,'\n');
     cout<<"\nNota 2: ";
-        cin>>notas[i].nota2;
+        cin>>estudiante[i].notas[i].nota2;
+        cin.ignore(256,'\n');
     cout<<"\nNota 3: ";
-        cin>>notas[i].nota3;
+        cin>>estudiante[i].notas[i].nota3;
+        cin.ignore(256,'\n');
     cout<<"\n***********************************************\n";
 
-        estudiante[i].promedio=((notas[i].nota1+notas[i].nota2+notas[i].nota3)/3);
+        estudiante[i].notas[i].promedio=(((estudiante[i].notas[i].nota1)+(estudiante[i].notas[i].nota2)+(estudiante[i].notas[i].nota3))/3);
     }
     system("cls");
 
@@ -60,9 +63,13 @@ int main()
         cout<<"\nNombre: "<<estudiante[i].nombre;
         cout<<"\nSexo: "<<estudiante[i].sexo;
         cout<<"\nEdad: "<<estudiante[i].edad;
-        cout<<"\nPromedio de Notas: "<<estudiante[i].promedio;
+        cout<<"\nNota 1: "<<estudiante[i].notas[i].nota1;
+        cout<<"\nNota 2: "<<estudiante[i].notas[i].nota2;
+        cout<<"\nNota 3: "<<estudiante[i].notas[i].nota3;
+        cout<<"\nPromedio de Notas: "<<estudiante[i].notas[i].promedio;
         cout<<"\n***********************************************\n";
     }
-    return 0;
+    cout<<"\n\n";
     system("pause");
+    return 0;
 }

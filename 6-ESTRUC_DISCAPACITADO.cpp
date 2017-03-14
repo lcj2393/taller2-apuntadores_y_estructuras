@@ -19,8 +19,11 @@ int main()
     char tipo;
     int n,npersona;
     int cpdisc=0,cpsdisc=0;
+
     cout<<"Digite la cantidad de personas a registrar: ";cin>>npersona;
+
     system("cls");
+
     cout<<"\n\t\tREGISTRO PERSONAS\n";
     cout<<"\n***********************************************\n";
     for(int i=0;i<npersona;i++){
@@ -30,6 +33,7 @@ int main()
     do{
         cout<<"\nEs Discapacitado(Si<S> o No<N>: ";
             cin>>tipo;
+            cin.ignore(256,'\n');
 
             switch(tipo){
             case 'S':
@@ -51,12 +55,14 @@ int main()
 
     for(int i=0;i<npersona;i++){
         if(persona[i].dis== true){
-            strcpy(pdisc[i],"");
-            strcat(pdisc[i],persona[i].nombre);
-        }else
-            {   strcpy(psdisc[i],"");
-                strcat(psdisc[i],persona[i].nombre);
-        }
+
+            strcpy(pdisc[i],persona[i].nombre);
+
+        }else{
+                if(persona[i].dis== false){
+            strcpy(psdisc[i],persona[i].nombre);
+                }
+            }
     }
    cout<<"\n***********************************************\n";
    cout<<"\t\tPERSONAS CON DISCAPACIDAD\n";
