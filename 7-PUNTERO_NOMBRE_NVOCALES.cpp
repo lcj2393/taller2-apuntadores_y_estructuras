@@ -1,66 +1,39 @@
-//CORREGIR ERROR EN EL RECORRIDO DEL NOMBRE PARA MOSTRAR LA CANTIDAD DE VOCALES
+//EJERCICIO FUNCIONANDO CORRECTAMENTE
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream>
 #include <string.h>
 
-using namespace std;
+void pedir_datos(char *);
+void comparador(int *,char *);
 
-void pedir_nombre(char *);
-void c_vocales(char *);
+int main(){
 
-using namespace std;
-
-int main()
-{
-    char nombre[10],*pnombre=nombre;
-
-    pedir_nombre(pnombre);
-    c_vocales(pnombre);
-	printf("\n\n");
-	system("pause");
-    return 0;
+    char nombre[30], *p_nombre=nombre;
+    int nletras, *p_nletras=&nletras;
+    pedir_datos(p_nombre);
+    *p_nletras=strlen(p_nombre);
+    comparador(p_nletras,p_nombre);
+    printf("\n\n");
+    system("pause");
+}
+void pedir_datos(char *p_nombre){
+    printf("\t\t\nREGISTRO DE NOMBRE PARA VALIDAR CANTIDAD DE VOCALES\n\n");
+    printf("\nDigite Nombre: ");
+    scanf("%s",p_nombre);
 }
 
-void pedir_nombre(char *pnombre){
+void comparador(int *p_nletras,char *p_nombre){
+    int n_vocales=0;
+    for(int i=0;i<*p_nletras;i++){
+        if(*(p_nombre+i)=='a' || *(p_nombre+i)=='A' || *(p_nombre+i)=='e' || *(p_nombre+i)=='E' || *
+            (p_nombre+i)=='i' || *(p_nombre+i)=='I' || *(p_nombre+i)=='o' || *(p_nombre+i)=='O' || *
+            (p_nombre+i)=='u' || *(p_nombre+i)=='U'){
 
-    cout<<"\nDigite Nombre: ";
-    cin>>*pnombre;
-    cout<<"\n";
-}
+                n_vocales++;
 
-void c_vocales(char *p){
-
-    int l_nombre;
-    int n_v=0;
-    char c_v[2];
-
-    l_nombre=strlen(p);
-
-    for(int i=0;i<(l_nombre);i++){
-
-        c_v[0]=*(p+i);
-
-        switch(c_v[0]){
-    case 'a':
-        n_v++;
-        break;
-    case 'e':
-        n_v++;
-        break;
-    case 'i':
-        n_v++;
-        break;
-    case 'o':
-        n_v++;
-        break;
-    case 'u':
-        n_v++;
-        break;
-        }
-
+            }
     }
-    cout<<"\nEl nombre tiene "<<l_nombre+1<<" letras.\n";
-    cout<<"\nEl nombre ingresado tiene "<<n_v<<" vocales.\n";
+
+        printf("\n\nLa cantidad de volcales que tiene son: %d ",n_vocales);
 }

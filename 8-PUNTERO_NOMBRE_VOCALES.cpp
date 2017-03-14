@@ -1,71 +1,66 @@
-//CORREGIR ERROR EN EL RECORRIDO DEL NOMBRE PARA MOSTRAR LA CANTIDAD DE VOCALES
+//EJERCICIO FUNCIONANDO CORRECTAMENTE
 
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream>
 #include <string.h>
 
-using namespace std;
-
-void pedir_nombre(char *);
-void c_vocales(char *);
+void pedir_datos(char *);
+void mostras_datos(int *,char *);
 
 using namespace std;
 
-int main()
-{
-    char nombre[30],*pnombre=nombre;
+int main(){
 
-    pedir_nombre(pnombre);
-    c_vocales(pnombre);
-	printf("\n\n");
-	system("pause");
-    return 0;
+    char nombre[30], *p_nombre=nombre;
+    int nletras, *p_nletras=&nletras;
+    pedir_datos(p_nombre);
+    *p_nletras=strlen(p_nombre);
+    mostras_datos(p_nletras,p_nombre);
+    cout<<"\n\n";
+    system("pause");
 }
-
-void pedir_nombre(char *pnombre){
-
+void pedir_datos(char *p_nombre){
+    cout<<"\t\t\nREGISTRO DE NOMBRE PARA VALIDAR CANTIDAD DE VOCALES\n\n";
     cout<<"\nDigite Nombre: ";
-    cin.getline(pnombre,30);
-    cin.ignore(256,'\n');
-    cout<<"\n";
+    cin.getline(p_nombre,30);
 }
 
-void c_vocales(char *p){
+void mostras_datos(int *p_nletras,char *p_nombre){
+    int n_vocales=0;
+    int n_a=0,n_e=0,n_i=0,n_o=0,n_u=0;
 
-    int l_nombre;
-    int n_a=0,n_e=0,n_i=0,n_o=0,n_u=0,n_v;
-    char c_v[2];
+    for(int i=0;i<*p_nletras;i++){
+        if(*(p_nombre+i)=='a' || *(p_nombre+i)=='A' ){
 
-    l_nombre=strlen(p);
-
-    for(int i=0;i<(l_nombre);i++){
-
-        c_v[0]=*(p+1);
-
-        switch(c_v[0]){
-    case 'a':
-        n_a++;n_v;
-        break;
-    case 'e':
-        n_e++;n_v;
-        break;
-    case 'i':
-        n_i++;n_v;
-        break;
-    case 'o':
-        n_o++;n_v;
-        break;
-    case 'u':
-        n_u++;n_v;
-        break;
-        }
-
+            n_vocales++;n_a++;
+        }else{
+                if(*(p_nombre+i)=='e' || *(p_nombre+i)=='E' ){
+                    n_vocales++;n_e++;
+                }else{
+                        if(*(p_nombre+i)=='i' || *(p_nombre+i)=='I'){
+                            n_vocales++;n_i++;
+                        }else{
+                                if(*(p_nombre+i)=='o' || *(p_nombre+i)=='O'){
+                                    n_vocales++;n_o++;
+                                }else{
+                                        if(*(p_nombre+i)=='u' || *(p_nombre+i)=='U'){
+                                            n_vocales++;n_u++;
+                                        }
+                                    }
+                            }
+                    }
+            }
     }
-    cout<<"\nEl nombre ingresado tiene "<<n_v<<" vocales.\n";
-    cout<<"\na= "<<n_a;
-    cout<<"\ne= "<<n_e;
-    cout<<"\ni= "<<n_i;
-    cout<<"\no= "<<n_o;
-    cout<<"\nu= "<<n_u;
+
+    if(n_vocales==0){
+        cout<<"\nEl nombre ingresado no posee vocales.\n";
+    }else{
+            cout<<"\nEl nombre ingresado tiene "<<n_vocales<<" vocales.\n";
+            cout<<"\na= "<<n_a;
+            cout<<"\ne= "<<n_e;
+            cout<<"\ni= "<<n_i;
+            cout<<"\no= "<<n_o;
+            cout<<"\nu= "<<n_u;
+    }
 }
