@@ -1,4 +1,4 @@
-//FALTA TERMINAR DE VALIDAR PORQUE NO IMPRIME LOS NOMBRES INGRESADOS
+//EJERCICIO TERMINADO, FUNCIONA CORRECTAMENTE
 
 #include <iostream>
 #include <stdlib.h>
@@ -16,9 +16,12 @@ struct listado_gral//LISTADO GENERAL CON PERSONAS CON Y SIN DISCAPACIDAD
 
 int main()
 {
+
     char tipo;
     int n,npersona;
     int cpdisc=0,cpsdisc=0;
+    int pdisc[cpdisc];
+    int psdisc[cpsdisc];
 
     cout<<"Digite la cantidad de personas a registrar: ";cin>>npersona;
 
@@ -38,11 +41,11 @@ int main()
             switch(tipo){
             case 'S':
                 persona[i].dis=true;
-                n=1;cpdisc++;
+                n=1; pdisc[cpdisc]=i;cpdisc++;
                 break;
             case 'N':
                 persona[i].dis=false;
-                n=1;cpsdisc++;
+                n=1;psdisc[cpsdisc];cpsdisc++;
                 break;
             default:cout<<"\nValor ingresado no valido.";
             n=0;
@@ -50,32 +53,20 @@ int main()
         }while(n!=1);
             cout<<"\n***********************************************\n";
     }
-    char pdisc[cpdisc][30];
-    char psdisc[cpsdisc][30];
 
-    for(int i=0;i<npersona;i++){
-        if(persona[i].dis== true){
-
-            strcpy(pdisc[i],persona[i].nombre);
-
-        }else{
-                if(persona[i].dis== false){
-            strcpy(psdisc[i],persona[i].nombre);
-                }
-            }
-    }
    cout<<"\n***********************************************\n";
    cout<<"\t\tPERSONAS CON DISCAPACIDAD\n";
    cout<<"***********************************************\n";
    for(int i=0;i<cpdisc;i++){
-       cout<<"\nNombre: "<<pdisc[i];
+       cout<<"\nNombre: "<<persona[pdisc[i]].nombre;
    }
    cout<<"\n***********************************************\n";
    cout<<"\t\tPERSONAS SIN DISCAPACIDAD\n";
    cout<<"***********************************************\n";
    for(int i=0;i<cpsdisc;i++){
-       cout<<"\nNombre: "<<psdisc[i];
+       cout<<"\nNombre: "<<persona[psdisc[i]].nombre;
    }
+    cout<<"\n\n";
     system("pause");
     return 0;
 }
